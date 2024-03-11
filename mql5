@@ -1,0 +1,90 @@
+mql5
+//+------------------------------------------------------------------+
+//|                    Multiple Charts Object Sync                   |
+//|               Developer's Site: forexroboteasy.com               |
+//|                Development: Forex Robot Easy Team                |
+//+------------------------------------------------------------------+
+
+// Object synchronization class
+class CObjectSync
+{
+   // Array to store all synchronized objects
+   CArray<CSynchronizedObject> m_objects;
+   
+   // Function to add a new object for synchronization
+   void AddObject(CSynchronizedObject object)
+   {
+      m_objects.Add(object);
+   }
+   
+   // Function to synchronize all objects
+   void SynchronizeObjects()
+   {
+      for(int i=0; i<m_objects.Total(); i++)
+      {
+         m_objects[i].Sync();
+      }
+   }
+}
+
+// Class to represent a synchronized object
+class CSynchronizedObject
+{
+   string m_name;
+   int m_chartID;
+   
+   // Function to create a new object on the chart
+   void CreateObject()
+   {
+      // Code to create the object on the chart
+   }
+   
+   // Function to edit the object on the chart
+   void EditObject()
+   {
+      // Code to edit the object on the chart
+   }
+   
+   // Function to synchronize the object with other charts
+   void Sync()
+   {
+      // Code to synchronize the object with other charts
+   }
+}
+
+// Function to handle object creation event
+void OnObjectCreate()
+{
+   // Code to handle object creation event
+}
+
+// Function to handle object edit event
+void OnObjectEdit()
+{
+   // Code to handle object edit event
+}
+
+// Function to handle chart change event
+void OnChartChange()
+{
+   // Code to handle chart change event
+}
+
+// Main function to start the synchronization process
+void OnStart()
+{
+   CObjectSync objectSync;
+   
+   // Create synchronized objects
+   CSynchronizedObject object1;
+   objectSync.AddObject(object1);
+   
+   CSynchronizedObject object2;
+   objectSync.AddObject(object2);
+   
+   CSynchronizedObject object3;
+   objectSync.AddObject(object3);
+   
+   // Start object synchronization
+   objectSync.SynchronizeObjects();
+}
